@@ -15,7 +15,7 @@ const createImage$ = (event) =>
 `);
 
 const eventAlive = ($elem) =>
-  $elem.toggleClass('alive') && $elem.remove() && triggerScore(10);
+  $elem.removeClass('alive') && $elem.remove() && triggerScore(10);
 
 const eventDead = ($elem) =>
   $elem.hasClass('alive') && $elem.remove() && triggerScore(-20);
