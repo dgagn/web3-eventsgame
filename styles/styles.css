@@ -1,9 +1,19 @@
-img {
-  position: absolute;
-}
-
 body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  margin: 0;
+}
+
+img {
+  position: absolute;
+}
+
+.score {
+  font-size: 3rem;
+  font-weight: bold;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  font-family: system-ui, sans-serif;
+  user-select: none;
 }

@@ -11,7 +11,7 @@ const events = ['click', 'contextmenu', 'dblclick', 'mouseenter'];
 
 const createImage$ = (event) =>
   $(`
-    <img src='./img/${event}.png?' alt='${event}' class='alive' />
+    <img src="./img/${event}.png?" alt="${event}" class="alive" />
 `);
 
 const eventAlive = ($elem) =>
@@ -24,7 +24,7 @@ const animateBottom = ($elem) =>
   $elem.animate({bottom: 0}, 3000, () => eventDead($elem));
 
 const randomPosition = ($elem) =>
-  $elem.css({left: `${Math.random() * 100}vw`});
+  $elem.css({left: `${randomNumberInterval(10, 90)}vw`});
 
 const addEvent = (event) => ($elem) => $elem.on(event, () => eventAlive($elem));
 
