@@ -1,9 +1,9 @@
-const score = $('#score');
+const $score = $('#score');
 
 let scoreValue = 0;
-score.on('score', (_, number) => {
+$score.on('score', (_, number) => {
   scoreValue += number;
-  score.text(scoreValue);
+  $score.text(scoreValue);
 });
 
-export const triggerScore = (scoreValue) => score.trigger('score', scoreValue);
+export const triggerScore = (score) => $score.trigger('score', score);
