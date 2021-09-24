@@ -20,21 +20,22 @@ const eventAlive = ($elem) =>
 const eventDead = ($elem) =>
   $elem.hasClass('alive') && $elem.remove() && triggerScore(-20);
 
-const animateBottom = ($elem) =>
+const animateToBottom = ($elem) =>
   $elem.animate({bottom: 0}, 3000, () => eventDead($elem));
 
-const randomPosition = ($elem) =>
+const randomPositionX = ($elem) =>
   $elem.css({left: `${randomNumberInterval(10, 90)}vw`});
 
-const addEvent = (event) => ($elem) => $elem.on(event, () => eventAlive($elem));
+const addAliveEvent = (event) => ($elem) =>
+  $elem.on(event, () => eventAlive($elem));
 
 const createEventBlock = (event) =>
   pipe(
       createImage$,
       appendToBody,
-      animateBottom,
-      randomPosition,
-      addEvent(event),
+      animateToBottom,
+      randomPositionX,
+      addAliveEvent(event),
   )(event);
 
 const createRandomEventBlock = () =>
