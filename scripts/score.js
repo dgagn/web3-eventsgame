@@ -6,4 +6,4 @@ score.on('score', (_, number) => {
   score.text(scoreValue);
 });
 
-export const triggerScore = (score) => score.trigger('score', score);
+export const triggerScore = (scoreValue) => score.trigger('score', scoreValue);

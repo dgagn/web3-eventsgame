@@ -33,9 +33,9 @@ const createEventBlock = (event) =>
   pipe(
       createImage$,
       appendToBody,
-      animateToBottom,
       randomPositionX,
       addAliveEvent(event),
+      animateToBottom,
   )(event);
 
 const createRandomEventBlock = () =>
@@ -43,6 +43,7 @@ const createRandomEventBlock = () =>
 
 const clampedTimeout = clamp(500, 10_000);
 let timeout = clampedTimeout(5_000);
+
 const recursiveEventBlock = () => {
   const randomNumberBlocks = randomNumberInterval(1, 3);
   [...Array(randomNumberBlocks)].forEach(createRandomEventBlock);
